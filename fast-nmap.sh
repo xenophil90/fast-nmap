@@ -1,4 +1,7 @@
 #!/bin/bash
+
+# This script executes a nmap scan and then performs a detailed scan only on the identified ports. The results are written to a text file.
+
 echo "Insert target IP and press return to start fast nmap scan:"
 
 read ip
@@ -18,3 +21,5 @@ echo "Starting detailed scan on identified ports..."
 sudo nmap -T3 -A -p $ports $ip > nmap-detailed-results.txt
 
 echo "Results were written to nmap-detailed-results.txt."
+echo "----"
+cat nmap-detailed-results.txt
